@@ -1,65 +1,70 @@
-# Positive Definite Matrix — Evaluation Rubric
+# Positive Definite Matrix — Rubric
 
 Total: 10 points
 
-## 1. Correct use of definitions — 2 points
+This rubric evaluates whether the answer correctly proves that every eigenvalue of a real symmetric positive definite matrix is strictly positive.
+
+## 1. Correct use of positive definiteness — 2 points
 
 The answer should correctly use the definition of positive definiteness:
 
-\[
+$$
 x^T A x > 0
-\]
+$$
 
-for every nonzero vector \(x\).
+for every nonzero vector $x$.
 
-Full credit requires understanding that this is a condition on the quadratic form, not on individual matrix entries.
+Full credit requires recognizing that positive definiteness is a condition on the quadratic form, not on the individual entries of the matrix.
 
-## 2. Correct use of eigenvectors — 2 points
+## 2. Correct use of an eigenpair — 2 points
 
-The answer should introduce an eigenvalue \(\lambda\) and a nonzero eigenvector \(v\) satisfying
+The answer should introduce an eigenvalue $\lambda$ and a nonzero eigenvector $v$ such that
 
-\[
+$$
 Av = \lambda v.
-\]
+$$
 
-The argument should apply positive definiteness to this eigenvector.
+The proof should apply positive definiteness to this eigenvector.
 
 ## 3. Valid algebraic derivation — 2 points
 
-The answer should correctly derive
+The answer should derive
 
-\[
+$$
 v^T A v = \lambda v^T v.
-\]
+$$
 
-This step must be justified using the eigenvalue equation.
+This step must follow from the eigenvalue equation $Av = \lambda v$.
 
 ## 4. Correct positivity argument — 2 points
 
-The answer should note that
+The answer should use the fact that $v \neq 0$, so
 
-\[
-v^T v > 0
-\]
+$$
+v^T v > 0.
+$$
 
-because \(v \neq 0\), and then conclude from
+From
 
-\[
-\lambda v^T v > 0
-\]
+$$
+v^T A v = \lambda v^T v > 0,
+$$
 
-that
+the answer should correctly conclude that
 
-\[
+$$
 \lambda > 0.
-\]
+$$
 
-## 5. Clarity and absence of false claims — 2 points
+## 5. Mathematical rigor and clarity — 2 points
 
-The answer should avoid incorrect claims such as:
+The answer should be logically valid and avoid false or vague claims.
 
-- positive definite matrices have only positive entries;
-- entrywise positivity implies positive eigenvalues;
-- eigenvalues are positive because the matrix sends vectors in a “positive direction.”
+Common mistakes include claiming that:
 
-The explanation should be clear, concise, and logically valid.
+- positive definite matrices must have only positive entries;
+- entrywise positivity is equivalent to positive definiteness;
+- eigenvalues are positive because the matrix sends vectors in a “positive direction”;
+- the conclusion follows from geometric intuition without proof.
+
+A complete answer should be concise, rigorous, and based on the quadratic form definition.
