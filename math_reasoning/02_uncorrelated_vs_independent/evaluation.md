@@ -35,7 +35,7 @@ The model correctly writes the covariance formula, but then makes an invalid log
 From
 
 $$
-\operatorname{Cov}(X,Y)=0
+\\mathrm{Cov}(X,Y)=0
 $$
 
 we get
@@ -61,7 +61,7 @@ Then $Y$ is fully determined by $X$, so $X$ and $Y$ are not independent.
 However,
 
 $$
-\operatorname{Cov}(X,Y)=0.
+\\mathrm{Cov}(X,Y)=0.
 $$
 
 This gives a direct counterexample to the model's claim.
@@ -71,7 +71,7 @@ This gives a direct counterexample to the model's claim.
 The correct conclusion is:
 
 $$
-\operatorname{Cov}(X,Y)=0 \not\implies X \text{ and } Y \text{ are independent.}
+\\mathrm{Cov}(X,Y)=0 \not\implies X \text{ and } Y \text{ are independent.}
 $$
 
 Independence implies zero covariance when the relevant expectations exist, but the converse is false.

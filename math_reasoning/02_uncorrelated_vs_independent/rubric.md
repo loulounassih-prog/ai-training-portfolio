@@ -4,7 +4,7 @@ Total: 10 points
 
 ## 1. Correct verdict: zero covariance does not imply independence — 2 points
 
-- 2 pts: Clearly states that $\operatorname{Cov}(X,Y)=0$ does not imply independence.
+- 2 pts: Clearly states that $\\mathrm{Cov}(X,Y)=0$ does not imply independence.
 - 1 pt: Suggests the statement is not always true but is vague.
 - 0 pts: Claims that zero covariance implies independence.
 
@@ -27,7 +27,7 @@ $$
 
 ## 4. Correctly computes the covariance — 2 points
 
-- 2 pts: Correctly computes $\mathbb{E}[X]$, $\mathbb{E}[Y]$, $\mathbb{E}[XY]$, and concludes $\operatorname{Cov}(X,Y)=0$.
+- 2 pts: Correctly computes $\mathbb{E}[X]$, $\mathbb{E}[Y]$, $\mathbb{E}[XY]$, and concludes $\\mathrm{Cov}(X,Y)=0$.
 - 1 pt: Gives the right covariance conclusion but with incomplete computation.
 - 0 pts: Computes the covariance incorrectly.
 

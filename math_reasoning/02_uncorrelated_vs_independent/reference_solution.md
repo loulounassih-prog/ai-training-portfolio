@@ -99,7 +99,7 @@ So $X$ and $Y$ are not independent.
 By definition,
 
 $$
-\operatorname{Cov}(X,Y)=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y].
+\\mathrm{Cov}(X,Y)=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y].
 $$
 
 First compute $\mathbb{E}[X]$:
@@ -163,7 +163,7 @@ $$
 Therefore,
 
 $$
-\operatorname{Cov}(X,Y)
+\\mathrm{Cov}(X,Y)
 =
 0 - 0 \cdot \frac{2}{3}
 =
@@ -175,7 +175,7 @@ $$
 We have constructed random variables $X$ and $Y$ such that:
 
 $$
-\operatorname{Cov}(X,Y)=0,
+\\mathrm{Cov}(X,Y)=0,
 $$
 
 but $X$ and $Y$ are not independent.
@@ -183,11 +183,11 @@ but $X$ and $Y$ are not independent.
 Therefore,
 
 $$
-\operatorname{Cov}(X,Y)=0 \not\implies X \text{ and } Y \text{ are independent.}
+\\mathrm{Cov}(X,Y)=0 \not\implies X \text{ and } Y \text{ are independent.}
 $$
 
 The correct implication is the other way around: if $X$ and $Y$ are independent and the relevant expectations exist, then
 
 $$
-\operatorname{Cov}(X,Y)=0.
+\\mathrm{Cov}(X,Y)=0.
 $$

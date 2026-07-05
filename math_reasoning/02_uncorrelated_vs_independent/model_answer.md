@@ -1,14 +1,14 @@
 # Model Answer
 
-Yes. If $\operatorname{Cov}(X,Y)=0$, then $X$ and $Y$ are independent.
+Yes. If $\\mathrm{Cov}(X,Y)=0$, then $X$ and $Y$ are independent.
 
 By definition,
 
 $$
-\operatorname{Cov}(X,Y)=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y].
+\\mathrm{Cov}(X,Y)=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y].
 $$
 
-If $\operatorname{Cov}(X,Y)=0$, then
+If $\\mathrm{Cov}(X,Y)=0$, then
 
 $$
 \mathbb{E}[XY]=\mathbb{E}[X]\mathbb{E}[Y].
@@ -21,5 +21,5 @@ For example, if $X$ and $Y$ are any random variables with zero covariance, then 
 So the answer is:
 
 $$
-\operatorname{Cov}(X,Y)=0 \implies X \text{ and } Y \text{ are independent.}
+\\mathrm{Cov}(X,Y)=0 \implies X \text{ and } Y \text{ are independent.}
 $$
