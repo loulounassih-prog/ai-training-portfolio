@@ -79,11 +79,7 @@ $$
 But
 
 $$
-\mathbb{P}(X=0)\mathbb{P}(Y=0)
-=
-\frac{1}{3}\cdot\frac{1}{3}
-=
-\frac{1}{9}.
+\mathbb{P}(X=0)\mathbb{P}(Y=0) = \frac{1}{3}\cdot\frac{1}{3} = \frac{1}{9}.
 $$
 
 Therefore,
