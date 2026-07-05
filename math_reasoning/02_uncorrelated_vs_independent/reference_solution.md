@@ -101,11 +101,7 @@ $$
 First compute $\mathbb{E}[X]$:
 
 $$
-\mathbb{E}[X]
-=
-(-1)\frac{1}{3}+0\frac{1}{3}+1\frac{1}{3}
-=
-0.
+\mathbb{E}[X] = (-1)\frac{1}{3}+0\frac{1}{3}+1\frac{1}{3} = 0.
 $$
 
 Next compute $\mathbb{E}[Y]$.
@@ -113,19 +109,13 @@ Next compute $\mathbb{E}[Y]$.
 Since $Y=X^2$,
 
 $$
-\mathbb{E}[Y]
-=
-\mathbb{E}[X^2].
+\mathbb{E}[Y] = \mathbb{E}[X^2]. 
 $$
 
 Thus,
 
 $$
-\mathbb{E}[Y]
-=
-(-1)^2\frac{1}{3}+0^2\frac{1}{3}+1^2\frac{1}{3}
-=
-\frac{2}{3}.
+\mathbb{E}[Y] = (-1)^2\frac{1}{3}+0^2\frac{1}{3}+1^2\frac{1}{3} = \frac{2}{3}.
 $$
 
 Now compute $\mathbb{E}[XY]$.
@@ -139,31 +129,19 @@ $$
 Therefore,
 
 $$
-\mathbb{E}[XY]
-=
-\mathbb{E}[X^3].
+\mathbb{E}[XY] = \mathbb{E}[X^3].
 $$
 
 So,
 
 $$
-\mathbb{E}[XY]
-=
-(-1)^3\frac{1}{3}+0^3\frac{1}{3}+1^3\frac{1}{3}
-=
--\frac{1}{3}+0+\frac{1}{3}
-=
-0.
+\mathbb{E}[XY] = (-1)^3\frac{1}{3}+0^3\frac{1}{3}+1^3\frac{1}{3} = -\frac{1}{3}+0+\frac{1}{3} = 0.
 $$
 
 Therefore,
 
 $$
-\\mathrm{Cov}(X,Y)
-=
-0 - 0 \cdot \frac{2}{3}
-=
-0.
+\\mathrm{Cov}(X,Y) = 0 - 0 \cdot \frac{2}{3} = 0.
 $$
 
 ## Conclusion
