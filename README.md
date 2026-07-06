@@ -1,88 +1,76 @@
 # AI Training Portfolio — Math & Coding Evaluation
 
-This repository contains original examples of math reasoning evaluation, coding review, and model-output assessment.
+This repository contains short technical examples of AI response evaluation in mathematics and coding.
 
-The purpose of this repository is to present clear, reproducible examples of how technical answers can be reviewed for correctness, reasoning quality, edge cases, and consistency with a given task.
+Each example includes a prompt or task, a plausible flawed model answer, an evaluation of that answer, a correct reference solution, and a scoring rubric.
 
-## Contents
-
-The repository is organized into four parts:
+## Repository Structure
 
     math_reasoning/
-        Mathematical problems, rigorous solutions, and reviews of incorrect reasoning.
+    ├── 01_positive_definite_matrix/
+    ├── 02_uncorrelated_vs_independent/
+    └── 03_convex_optimization_condition/
 
     coding_evals/
-        Python code review examples, corrected implementations, and unit tests.
+    └── 01_binary_search_edge_cases/
 
-    model_evaluation/
-        Pairwise evaluations of candidate model answers using explicit criteria.
+## Example Format
 
-    rubrics/
-        General rubrics for evaluating math reasoning and coding responses.
+Math examples use the following structure:
 
-## Evaluation Principles
+    prompt.md
+    model_answer.md
+    evaluation.md
+    reference_solution.md
+    rubric.md
 
-The examples focus on evaluating whether an answer is correct, justified, complete, and aligned with the original prompt.
+Coding examples use the following structure:
 
-A technical answer is not considered correct only because it is fluent or convincing. The reasoning must be checked step by step.
+    task.md
+    model_answer.py
+    evaluation.md
+    corrected_solution.py
+    test_binary_search.py
+    rubric.md
 
-The main evaluation criteria are:
+## Current Examples
 
-- correctness of the final answer;
-- validity of the reasoning;
-- presence of hidden assumptions;
-- treatment of edge cases;
-- clarity of explanation;
-- consistency with the task;
-- usefulness of the feedback.
+### Positive Definite Matrix
 
-## Math Reasoning Examples
+Evaluates a flawed proof claiming that positive definite matrices must have positive entries.
 
-The math examples include:
+Main issue: positive definiteness is a condition on the quadratic form, not on individual matrix entries.
 
-- a problem statement;
-- a rigorous solution;
-- a review of a plausible but incorrect solution.
+### Uncorrelated vs Independent
 
-The reviews focus on identifying the exact point where the reasoning fails, explaining why it fails, and providing a corrected argument when needed.
+Evaluates the common mistake of assuming that zero covariance implies independence.
 
-## Coding Evaluation Examples
+Main issue: independence implies zero covariance under suitable assumptions, but the converse is false in general.
 
-The coding examples include:
+### Convex Optimization Condition
 
-- an incorrect or incomplete implementation;
-- a corrected implementation;
-- unit tests;
-- a short review explaining the bug and the correction.
+Evaluates the claim that a zero gradient always implies a global minimum.
 
-The reviews focus on correctness, boundary cases, input handling, and test coverage.
+Main issue: a stationary point is not necessarily a global minimizer without additional assumptions such as convexity.
 
-## Model Evaluation Examples
+### Binary Search Edge Cases
 
-The model evaluation examples compare two candidate answers to the same task.
+Evaluates a binary search implementation that fails on boundary cases.
 
-Each comparison uses explicit criteria to separate different aspects of answer quality, such as correctness, reasoning, completeness, and clarity.
-
-The objective is not only to select the better answer, but also to explain why it is better.
+Main issue: the loop condition misses the final candidate position in some cases.
 
 ## Running Tests
 
-Install the required dependency:
+Install dependencies:
 
     pip install -r requirements.txt
 
-Run the tests with:
+Run tests:
 
     pytest
-
-## Scope
-
-This is a small portfolio repository, not a large software project.
-
-The examples are intentionally focused and self-contained. They are designed to make the evaluation process easy to inspect.
 
 ## Notes
 
 All examples are original portfolio samples.
 
-No private assessment material, confidential platform content, or proprietary guidelines are included.
+No confidential assessment material or platform-specific guidelines are included.
