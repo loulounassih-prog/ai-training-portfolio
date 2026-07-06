@@ -157,7 +157,7 @@ but $X$ and $Y$ are not independent.
 Therefore,
 
 $$
-\\mathrm{Cov}(X,Y)=0 \not\implies X \text{ and } Y \text{ are independent.}
+\mathrm{Cov}(X,Y)=0 \nRightarrow X \text{ and } Y \text{ are independent.}
 $$
 
 The correct implication is the other way around: if $X$ and $Y$ are independent and the relevant expectations exist, then
