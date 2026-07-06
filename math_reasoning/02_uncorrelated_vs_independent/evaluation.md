@@ -71,7 +71,7 @@ This gives a direct counterexample to the model's claim.
 The correct conclusion is:
 
 $$
-\\mathrm{Cov}(X,Y)=0 \not\implies X \text{ and } Y \text{ are independent.}
+\mathrm{Cov}(X,Y)=0 \;\nRightarrow\; X \text{ and } Y \text{ are independent.}
 $$
 
 Independence implies zero covariance when the relevant expectations exist, but the converse is false.
