@@ -1,4 +1,4 @@
-# Evaluation
+# Uncorrelated vs Independent — Evaluation
 
 ## Verdict
 
@@ -8,9 +8,9 @@ Zero covariance does not imply independence in general. It only shows that $X$ a
 
 ## Score
 
-2 / 10
+2/10
 
-## Main error
+## Main issue
 
 The answer confuses the condition
 

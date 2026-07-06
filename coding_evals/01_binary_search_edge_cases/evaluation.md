@@ -1,67 +1,88 @@
-# Evaluation
+# Positive Definite Matrix — Evaluation
 
 ## Verdict
 
-The submitted answer contains the general idea of binary search, but it is not fully correct.
+The model answer reaches the correct final conclusion, but the reasoning is invalid.
+
+The statement is true: every eigenvalue of a real symmetric positive definite matrix is strictly positive. However, the proposed proof does not establish it.
 
 ## Score
 
-5/10
+4/10
 
-## What is correct
+## Main Issue
 
-The solution uses the standard binary search structure with `left`, `right`, and `mid`.
+The model answer incorrectly claims that if $A$ is positive definite, then all entries of $A$ must be positive.
 
-The intended time complexity is $O(\log n)$, and the space complexity is $O(1)$.
+This is false.
 
-The boundary updates are close to a correct implementation:
+Positive definiteness is a condition on the quadratic form $x^T A x$ for every nonzero vector $x$. It is not a condition on the individual entries of the matrix.
 
-```python
-left = mid + 1
-right = mid - 1
-```
+## Why the Reasoning Fails
 
-These updates are appropriate for a binary search that discards the already-tested midpoint.
+The answer confuses two different properties:
 
-## Main issue
+1. positive definiteness;
+2. entrywise positivity.
 
-The loop condition is incorrect for this implementation:
+These properties are not equivalent.
 
-```python
-while left < right:
-```
+The implication
 
-With this condition, the loop stops as soon as `left == right`. However, when `left == right`, there is still one remaining candidate index that has not necessarily been checked.
+$$
+A \text{ is positive definite} \Rightarrow A_{ij} > 0 \text{ for all } i,j
+$$
 
-As a result, the last possible candidate is never tested.
+is false.
 
-## Failing edge cases
+The answer also relies on vague geometric language such as “positive direction” and “stretching by positive factors” without proving these claims mathematically.
 
-This bug breaks simple cases such as:
+## Counterexample
 
-```python
-binary_search([10], 10)
-```
+Consider
 
-Expected result: `0`
+$$
+A =
+\begin{pmatrix}
+2 & -1 \\
+-1 & 2
+\end{pmatrix}.
+$$
 
-Actual result: `-1`
+This matrix has negative off-diagonal entries, so it is not entrywise positive.
 
-It also fails when the target is the last remaining candidate:
+However, for any vector $x = (x_1, x_2)^T$,
 
-```python
-binary_search([1, 3], 3)
-binary_search([1, 3, 5, 7], 7)
-```
+$$
+x^T A x = 2x_1^2 - 2x_1x_2 + 2x_2^2.
+$$
 
-In these cases, the search narrows down to the final index, but the loop exits before checking it.
+This can be rewritten as
 
-## Correction summary
+$$
+x^T A x = x_1^2 + x_2^2 + (x_1 - x_2)^2.
+$$
 
-For this style of binary search, where `right` is an inclusive boundary and the midpoint is discarded with `mid + 1` or `mid - 1`, the loop should be:
+If $x \neq 0$, this expression is strictly positive. Therefore, $A$ is positive definite even though some of its entries are negative.
 
-```python
-while left <= right:
-```
+This disproves the model answer's claim.
 
-This ensures that the final candidate is checked before returning `-1`.
+## Correct Reasoning Summary
+
+The correct proof should apply positive definiteness to an eigenvector.
+
+If $Av = \lambda v$ with $v \neq 0$, then positive definiteness gives
+
+$$
+v^T A v > 0.
+$$
+
+Using the eigenvalue equation,
+
+$$
+v^T A v = \lambda v^T v.
+$$
+
+Since $v^T v > 0$, it follows that $\lambda > 0$.
+
+A full reference solution is provided in `reference_solution.md`.
