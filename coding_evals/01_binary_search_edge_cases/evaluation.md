@@ -1,88 +1,96 @@
-# Positive Definite Matrix — Evaluation
+# Binary Search Edge Cases — Evaluation
 
 ## Verdict
 
-The model answer reaches the correct final conclusion, but the reasoning is invalid.
-
-The statement is true: every eigenvalue of a real symmetric positive definite matrix is strictly positive. However, the proposed proof does not establish it.
+The model answer follows the general structure of binary search, but the implementation is incorrect because it can fail to inspect the final remaining candidate.
 
 ## Score
 
-4/10
+5/10
 
 ## Main Issue
 
-The model answer incorrectly claims that if $A$ is positive definite, then all entries of $A$ must be positive.
+The loop condition is:
 
-This is false.
+```python
+while left < right:
+```
 
-Positive definiteness is a condition on the quadratic form $x^T A x$ for every nonzero vector $x$. It is not a condition on the individual entries of the matrix.
+The implementation uses inclusive boundaries: both `left` and `right` refer to indices that may still contain the target.
 
-## Why the Reasoning Fails
+When `left == right`, one valid candidate remains. However, the loop stops before checking that position.
 
-The answer confuses two different properties:
+For this implementation style, the condition should be:
 
-1. positive definiteness;
-2. entrywise positivity.
+```python
+while left <= right:
+```
 
-These properties are not equivalent.
+## Why the Code Fails
 
-The implication
+The boundary updates are:
 
-$$
-A \text{ is positive definite} \Rightarrow A_{ij} > 0 \text{ for all } i,j
-$$
+```python
+left = mid + 1
+right = mid - 1
+```
 
-is false.
+These updates define a closed search interval:
 
-The answer also relies on vague geometric language such as “positive direction” and “stretching by positive factors” without proving these claims mathematically.
+```text
+[left, right]
+```
 
-## Counterexample
+A closed interval is nonempty while `left <= right`.
 
-Consider
+Using `left < right` incorrectly treats the interval as empty when it contains exactly one element. The function may therefore return `-1` even when the target is present.
 
-$$
-A =
-\begin{pmatrix}
-2 & -1 \\
--1 & 2
-\end{pmatrix}.
-$$
+## Failing Edge Cases
 
-This matrix has negative off-diagonal entries, so it is not entrywise positive.
+### Single-element list
 
-However, for any vector $x = (x_1, x_2)^T$,
+```python
+binary_search([10], 10)
+```
 
-$$
-x^T A x = 2x_1^2 - 2x_1x_2 + 2x_2^2.
-$$
+Initially, `left == right == 0`. The loop never runs, so the function incorrectly returns `-1`.
 
-This can be rewritten as
+### Target at the final position
 
-$$
-x^T A x = x_1^2 + x_2^2 + (x_1 - x_2)^2.
-$$
+```python
+binary_search([1, 3, 5, 7, 9], 9)
+```
 
-If $x \neq 0$, this expression is strictly positive. Therefore, $A$ is positive definite even though some of its entries are negative.
+The search eventually leaves the final index as the only remaining candidate. Since `left == right`, the loop terminates before checking it.
 
-This disproves the model answer's claim.
+### Two-element list
 
-## Correct Reasoning Summary
+```python
+binary_search([2, 8], 8)
+```
 
-The correct proof should apply positive definiteness to an eigenvector.
+After the first comparison, the second element becomes the only remaining candidate, but it is never inspected.
 
-If $Av = \lambda v$ with $v \neq 0$, then positive definiteness gives
+## What Is Correct
 
-$$
-v^T A v > 0.
-$$
+The answer correctly:
 
-Using the eigenvalue equation,
+- uses binary search rather than a linear scan;
+- computes the midpoint correctly;
+- updates the search boundaries in the appropriate direction;
+- returns `-1` when the target is considered absent;
+- targets $O(\log n)$ time complexity and $O(1)$ auxiliary space.
 
-$$
-v^T A v = \lambda v^T v.
-$$
+However, the loop-condition error makes the implementation incorrect on important boundary cases.
 
-Since $v^T v > 0$, it follows that $\lambda > 0$.
+## Correction Summary
 
-A full reference solution is provided in `reference_solution.md`.
+The loop condition should be changed to:
+
+```python
+while left <= right:
+```
+
+This ensures that the final candidate is checked when `left == right`.
+
+The complete corrected implementation is provided in `corrected_solution.py`.
