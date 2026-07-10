@@ -1,4 +1,5 @@
 def binary_search(nums: list[int], target: int) -> int:
+    """Return an index containing target, or -1 when target is absent."""
     left = 0
     right = len(nums) - 1
 
@@ -7,7 +8,6 @@ def binary_search(nums: list[int], target: int) -> int:
 
         if nums[mid] == target:
             return mid
-
         if nums[mid] < target:
             left = mid + 1
         else:

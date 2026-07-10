@@ -1,52 +1,49 @@
-# Rubric
+# Convex Optimization Condition — Rubric
 
-Total: 10 points
+**Total: 10 points**
 
-## 1. Correctly identifies that the implication is false: 2 points
+| Criterion | Maximum |
+|---|---:|
+| Correct verdict and classification | 2 |
+| Valid counterexample | 2 |
+| Verification of the counterexample | 2 |
+| Correct sufficient condition | 1 |
+| Proof under the sufficient condition | 2 |
+| Clarity and rigor | 1 |
+| **Total** | **10** |
 
-- 2 points: Clearly states that $\nabla f(x^\*) = 0$ does not imply that $x^\*$ is a global minimizer in general.
-- 1 point: Suggests that the implication may fail, but the statement is unclear or incomplete.
-- 0 points: Claims that zero gradient always implies a global minimum.
+## 1. Correct Verdict and Classification — 2 Points
 
-## 2. Provides a valid counterexample: 2 points
+- **2 points:** States that a zero gradient does not imply a global minimum in general and identifies $x^*$ as a stationary point.
+- **1 point:** Gives the correct verdict but does not clearly distinguish stationarity from optimality.
+- **0 points:** Claims that a zero gradient always implies a global minimum.
 
-- 2 points: Gives a correct differentiable counterexample, such as $f(x) = x^3$ with $x^\* = 0$.
-- 1 point: Provides an example that is relevant but incomplete or not fully justified.
-- 0 points: Provides no counterexample or an invalid counterexample.
+## 2. Valid Counterexample — 2 Points
 
-## 3. Explains why the counterexample disproves the claim: 1.5 points
+- **2 points:** Provides a differentiable function and a point with zero derivative or gradient that is not a global minimizer.
+- **1 point:** Gives a relevant example but does not specify it completely.
+- **0 points:** Gives no counterexample or an invalid one.
 
-- 1.5 points: Correctly computes the derivative or gradient and shows that the stationary point is not a global minimizer.
-- 1 point: Gives the right intuition but misses part of the verification.
-- 0 points: Does not explain why the example disproves the claim.
+## 3. Verification of the Counterexample — 2 Points
 
-## 4. Distinguishes stationary points from minima: 1 point
+- **2 points:** Correctly verifies stationarity and exhibits points with smaller function values.
+- **1 point:** Verifies only one of these two facts or leaves a minor gap.
+- **0 points:** Does not show that the example disproves the claim.
 
-- 1 point: Clearly explains that a zero gradient only identifies a stationary point, not necessarily a local or global minimum.
-- 0.5 points: Mentions stationarity but does not explain the distinction clearly.
-- 0 points: Does not distinguish stationarity from optimality.
+## 4. Correct Sufficient Condition — 1 Point
 
-## 5. States a correct additional sufficient condition: 1 point
+- **1 point:** States a valid sufficient condition, such as differentiable convexity on the domain.
+- **0 points:** Gives no valid additional condition.
 
-- 1 point: Correctly states that convexity plus differentiability is sufficient.
-- 0.5 points: Mentions convexity but in a vague or incomplete way.
-- 0 points: Gives no sufficient condition or gives an incorrect one.
+## 5. Proof Under the Sufficient Condition — 2 Points
 
-## 6. Proves the convex case correctly: 1.5 points
+- **2 points:** Uses the first-order convexity inequality or an equivalent rigorous argument to prove global minimality.
+- **1 point:** Gives a substantially correct proof with a minor omission.
+- **0 points:** Gives only unsupported intuition or an invalid proof.
 
-- 1.5 points: Uses the first-order convexity inequality
+## 6. Clarity and Rigor — 1 Point
 
-$$
-f(y) \geq f(x^\*) + \nabla f(x^\*)^T (y - x^\*)
-$$
+- **1 point:** The reasoning is organized, precise, and uses correct mathematical terminology.
+- **0 points:** The response is materially unclear or misleading.
 
-and correctly concludes that $f(y) \geq f(x^\*)$ for all $y$.
-- 1 point: Gives a mostly correct proof but omits some details.
-- 0.5 points: Provides only intuition for the convex case.
-- 0 points: Gives no proof or an incorrect proof.
-
-## 7. Clarity and rigor: 1 point
-
-- 1 point: The answer is clear, logically structured, and mathematically precise.
-- 0.5 points: The answer is mostly understandable but lacks precision or structure.
-- 0 points: The answer is unclear, misleading, or poorly organized.
+Any mathematically equivalent counterexample and any rigorous proof using an equivalent characterization of convexity receive full credit for the relevant criteria.
